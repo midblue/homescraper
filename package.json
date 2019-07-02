@@ -1,0 +1,16 @@
+{
+  "name": "kyoto-life-scraper",
+  "version": "1.0.0",
+  "description": "",
+  "main": "scraper.js",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.3",
+    "node-fetch": "^2.6.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "dev": "node app.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
