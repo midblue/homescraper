@@ -1,4 +1,5 @@
 data/
+gmapsApiKey.json
 
 # Logs
 logs

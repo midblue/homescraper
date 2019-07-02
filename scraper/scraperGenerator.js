@@ -41,6 +41,8 @@ function generateScraper({ name, url, listingSelector, attributeSelectors }) {
             payload[attr] = value
           })
           payload.firstSeen = Date.now()
+          payload.source = name
+          payload.sourceURL = url
 
           if (
             !payload.title ||
