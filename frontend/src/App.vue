@@ -9,7 +9,6 @@
 
 <script>
 import Listing from './components/Listing'
-import { setTimeout } from 'timers'
 export default {
   components: { Listing },
   data() {

@@ -12,7 +12,7 @@ module.exports = {
       runningListOfSeenItems[settings.name] = JSON.parse(dataToUse)
       const getNewListings = generateScraper(settings)
       getNewListings()
-      setTimeout(getNewListings, 1000 * 60 * 60) // every hour
+      setInterval(getNewListings, 1000 * 60 * 60) // every hour
     })
   },
 }
