@@ -19,7 +19,7 @@ export default {
   },
   computed: {
     sortedListings() {
-      return this.listings.sort((a, b) => a.firstSeen - b.firstSeen)
+      return this.listings.sort((a, b) => b.firstSeen - a.firstSeen)
     },
   },
   created() {
@@ -48,7 +48,7 @@ export default {
 <style lang="scss">
 html,
 body {
-  font-family: 'Gotham', 'sans-serif';
+  font-family: 'Gotham', 'Helvetica', sans-serif;
   margin: 0;
   background: #f6f6f6;
   color: #333;

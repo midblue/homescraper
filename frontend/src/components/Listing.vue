@@ -12,7 +12,7 @@
       </a>
       <p>
         <span class="price">{{listing.price}}</span>
-        ・ {{listing.area}}㎡
+        ・ {{listing.area}}{{/^([0-9.])*$/g.exec(listing.area) ?'㎡' : ''}}
       </p>
       <p>
         <a target="_blank" :href="mapLink">{{listing.location}}</a>
@@ -58,7 +58,7 @@ a {
 
 .listing {
   display: grid;
-  grid-template-columns: 35% 35% 30%;
+  grid-template-columns: 33% 33% 34%;
   padding: 0px;
   margin: 30px 0;
   background: white;
