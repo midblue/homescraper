@@ -34,6 +34,11 @@ function generateScraper({ name, url, listingSelector, attributeSelectors }) {
           new Date(),
           `(${listings.length} listings found)`
         )
+
+        let removedListings = runningListOfSeenItems[name].map(
+          listing => listing.title
+        )
+
         listings.each((index, el) => {
           const payload = {}
           Object.keys(attributeSelectors).forEach(attr => {
@@ -43,6 +48,10 @@ function generateScraper({ name, url, listingSelector, attributeSelectors }) {
           payload.firstSeen = Date.now()
           payload.source = name
           payload.sourceURL = url
+
+          removedListings = removedListings.filter(
+            title => payload.title !== title
+          )
 
           if (
             !payload.title ||
@@ -59,6 +68,13 @@ function generateScraper({ name, url, listingSelector, attributeSelectors }) {
             (err, result) => {
               if (err) console.log('failed to save', err)
             }
+          )
+        })
+
+        removedListings.forEach(title => {
+          console.log(`Listing removed from ${name}:\n`, title, '\n')
+          runningListOfSeenItems[name] = runningListOfSeenItems.filter(
+            listing => title !== listing.title
           )
         })
       })
