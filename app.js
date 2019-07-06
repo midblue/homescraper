@@ -1,7 +1,4 @@
-require('./scraper/scraperManager')()
-
 const fs = require('fs')
-
 const express = require('express')
 const cors = require('cors')
 const app = express()
@@ -14,7 +11,19 @@ app.get('/api', async (req, res) =>
   res.json([].concat.apply([], await getAllData()))
 )
 
-app.listen(port, () => console.log(`Example app listening on port ${port}!`))
+app.listen(port, () =>
+  console.log(`Homescraper running at http://localhost:${port}!`)
+)
+
+// start scrapers after verifying data folder exists
+fs.readdir(`${__dirname}/scraper/data`, err => {
+  if (err)
+    fs.mkdir(`${__dirname}/scraper/data`, err => {
+      if (err) return console.log(err)
+      console.log('Created data directory.')
+    })
+})
+require('./scraper/scraperManager')()
 
 function getAllData() {
   return new Promise(resolve => {
