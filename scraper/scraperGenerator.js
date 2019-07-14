@@ -72,9 +72,16 @@ function generateScraper({ name, url, listingSelector, attributeSelectors }) {
         })
 
         removedListings.forEach(title => {
-          console.log(`Listing removed from ${name}:\n`, title, '\n')
-          runningListOfSeenItems[name] = runningListOfSeenItems.filter(
+          console.log(`\nListing removed from ${name}:\n`, title, '\n')
+          runningListOfSeenItems[name] = runningListOfSeenItems[name].filter(
             listing => title !== listing.title
+          )
+          fs.writeFile(
+            `${__dirname}/data/${name}.json`,
+            JSON.stringify(runningListOfSeenItems[name]),
+            (err, result) => {
+              if (err) console.log('failed to save', err)
+            }
           )
         })
       })

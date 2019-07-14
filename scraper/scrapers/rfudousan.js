@@ -1,6 +1,6 @@
 module.exports = {
   name: 'R不動産',
-  url: `https://www.realkyotoestate.jp/estate_search.php?mode=key&display=inline&type%5B%5D=1&usage%5B%5D=1&k=&x=76&y=456&type2%5B%5D=1&rent_from=0&rent_to=15&building_area_from=50&building_area_to=0&area_id%5B%5D=3&area_id%5B%5D=4&area_id%5B%5D=5&other%5B%5D=3&popup_area_id%5B%5D=3&popup_area_id%5B%5D=4&popup_area_id%5B%5D=5`,
+  url: `https://www.realkyotoestate.jp/estate_search.php?mode=key&display=inline&type%5B%5D=1&usage%5B%5D=1&k=&type2%5B%5D=1&rent_from=0&rent_to=15&building_area_from=50&building_area_to=0&area_id%5B%5D=3&area_id%5B%5D=4&area_id%5B%5D=5&other%5B%5D=3&x=168&y=19&popup_area_id%5B%5D=3&popup_area_id%5B%5D=4&popup_area_id%5B%5D=5`,
   listingSelector: {
     selector: '.estate_link',
     context: '#search_resul',
