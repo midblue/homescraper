@@ -1,8 +1,12 @@
+const push = require('./pushDataToGithub')
 const fs = require('fs')
 const express = require('express')
 const cors = require('cors')
 const app = express()
 const port = 4000
+
+// push()
+// setInterval(push, 1000 * 60 * 60)
 
 app.use(cors())
 app.use(express.static('frontend/dist'))

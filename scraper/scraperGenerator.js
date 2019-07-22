@@ -76,15 +76,15 @@ function generateScraper({ name, url, listingSelector, attributeSelectors }) {
           runningListOfSeenItems[name] = runningListOfSeenItems[name].filter(
             listing => title !== listing.title
           )
-          fs.writeFile(
+          fs.writeFileSync(
             `${__dirname}/data/${name}.json`,
-            JSON.stringify(runningListOfSeenItems[name]),
-            (err, result) => {
-              if (err) console.log('failed to save', err)
-            }
+            JSON.stringify(runningListOfSeenItems[name])
           )
         })
       })
+      .catch(err =>
+        console.log('Failed to fetch', name, `@`, new Date(), err.code)
+      )
   }
 
   return scraper
