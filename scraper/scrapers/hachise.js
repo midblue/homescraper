@@ -3,7 +3,7 @@ module.exports = {
   url: `https://www.hachise.jp/rent/list/index.html`,
   listingSelector: {
     selector:
-      'li.property.diy.pet.live.shimo, li.property.diy.pet.live.naka, li.property.diy.pet.live.kami',
+      'li.property.diy.pet.live.shimo, li.property.diy.pet.live.naka, li.property.diy.pet.live.kami, li.property.diy.pet.live.higashi',
     context: '.propertyList ul',
   },
   attributeSelectors: {

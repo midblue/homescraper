@@ -1,6 +1,7 @@
 module.exports = {
   name: 'kyotoLife',
-  url: `https://www.kyoto-life.co.jp/search/result/mode/20/are/26102_26104_26106/cat/30/prh/15/arl/60/con/-200_10301_10902`, //`https://www.kyoto-life.co.jp/search/result/mode/20/dmode/0/con/-200_10301_10902/count/30/sort1/30/are/26104_26106/cat/30/prh/15/arl/60`,
+  url: `https://www.kyoto-life.co.jp/search/result/mode/20/are/26102_26104_26105_26106/cat/30/prh/15/arl/60/con/-200_10301_10902`,
+  //`https://www.kyoto-life.co.jp/search/result/mode/20/are/26102_26104_26106/cat/30/prh/15/arl/60/con/-200_10301_10902`, //`https://www.kyoto-life.co.jp/search/result/mode/20/dmode/0/con/-200_10301_10902/count/30/sort1/30/are/26104_26106/cat/30/prh/15/arl/60`,
   listingSelector: {
     selector: '.bukken',
     context: '.section',
